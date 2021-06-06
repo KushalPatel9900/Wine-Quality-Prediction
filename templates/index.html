@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    
+    <div style="color:rgb(255, 255, 255)">
+        
+        <form action="{{ url_for('predict')}}" method="post">
+        <h2>Wine Quality Checker</h2>
+        <table align="center" cellspacing="10px">
+				<br>
+                <tr>
+                    <td> <label for="first"> Fixed Acidity:  </label> </td>
+                    <td> <input id="first" name="fixed acidity" type="number "> </td>
+                </tr>
+
+                <tr>
+                    <td> <label for="second"> Volatile Acidity:  </label> </td>
+                    <td> <input id="second" name="volatile acidity" type="number "> </td>
+                </tr>
+            
+                <tr>
+                    <td> <label for="third"> Citric Acid:   </label> </td>
+                    <td> <input id="third" name="citric acid" type="number "> </td>
+                </tr>
+            
+                <tr>
+                    <td> <label for="fourth"> Residual Sugar:  </label> </td>
+                    <td> <input id="fourth" name="residual sugar" type="number "> </td>
+                </tr>
+            
+                <tr>
+                    <td> <label for="fifth"> Chlorides:  </label> </td>
+                    <td> <input id="fifth" name="chlorides" type="number "> </td>
+                </tr>
+            
+                <tr>
+                    <td> <label for="sixth"> Free Sulphur Dioxide:  </label> </td>
+                    <td> <input id="sixth" name="free sulfur dioxide" type="number "> </td>
+                </tr>
+            
+                <tr>
+                    <td> <label for="seventh"> Density:  </label> </td>
+                    <td> <input id="seventh" name="density" type="number "> </td>
+                </tr>
+
+                <tr>
+                    <td> <label for="eigth"> pH:  </label> </td>
+                    <td> <input id="eigth" name="pH" type="number "> </td>
+                </tr>
+
+                <tr>
+                    <td> <label for="ninth"> Sulphates:  </label> </td>
+                    <td> <input id="ninth" name="sulphates" type="number "> </td>
+                </tr>
+
+                <tr>
+                    <td> <label for="tenth"> Alcohol:  </label> </td>
+                    <td> <input id="tenth" name="alcohol" type="number "> </td>
+                </tr>
+
+                <tr>
+                    <td> <label for="eleventh"> Color:  </label> </td>
+                    <td> <select name="type_white" id="eleventh" required="required">
+                        <option value=1>White</option>
+                        <option value=0>Red</option>
+                    </select>
+                    </td>
+                </tr>
+
+        </table>
+            <br><button id="sub" type="submit">Calculate</button>
+        </form>
+        <br><h3>{{ prediction }} <h3>
+    </div>
+    
+    <style>
+        body {
+            background-color: rgb(158, 8, 158);
+            text-align: center;
+            padding: 0px;
+        }
+
+        label {
+            font-size: 24px;
+            padding: 15px;
+            color:rgb(219, 203, 223)
+        }
+        
+        h2 {
+            color: rgb(236, 188, 132)
+        }
+
+        h3 {
+            color:rgb(216, 167, 230)
+        }
+
+        #sub {
+            width: 120px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+        
+        #sub:hover {
+            background-color: rgb(208, 163, 221);
+        }
+        
+        #first, #second, #third, #fourth, #fifth, #sixth, #seventh, #eigth, #ninth, #tenth, #eleventh {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+    </style>
+</body>
+
+</html>
